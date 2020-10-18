@@ -1,4 +1,4 @@
------Prequeties----
+-----Preresqueties----
 
 1: requirement.txt
 2: xammp mysql or any other mysql database_engine
