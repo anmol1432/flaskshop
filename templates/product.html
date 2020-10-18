@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {% block body %}
+
+<!-- flash message  -->
+<div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong class="text-dark text-capitalize">{{messages}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    {%endif%}
+    {%endwith %}
+</div>
+<!-- flash message end -->
+
+<div id="flex-container">
+    {% for product in products %}
+    <div class="card align-content-center" style="width: 17rem;
+          font-family: arial;  
+          margin-top: 1.5rem;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <img src="{{product.p_img}}" class="card-img-top img-fluid" style="width: 100%" />
+        <div class="card-body text-center">
+            <form action="/order" method="POST">
+                <p><input type="hidden" name="name" value="{{product.p_name}}">{{product.p_name}}</p>
+                <p class="price" style="color: grey;font-size: 1.5rem;"><input type="hidden" name="Price"
+                        value="{{product.p_price}}">${{product.p_price}}</p>
+                <p><input type="hidden" name="Discription" value="{{product.p_discription}}">{{product.p_discription}}
+                </p>
+                <label class="text-capitalize text-dark">quantity:
+                    <input type="number" class="form-control" name="quantity" value=1>
+                </label>
+                <button class=" btn btn-info text-capitalize rounded text-light" type="submit">Buy
+                    Now</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock body %}

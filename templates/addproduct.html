@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<section>
+    <h2 class="text-center ">Add Product's</h2>
+    <hr class="w-25 mx-auto bg-dark">
+
+    <div class="container mb-lg-3" style="margin-top: 2rem;">
+        <div class="w-50 mx-auto font-weight-bold  ">
+            <form action="{{endpoint}}" method="POST">
+                <div>
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            {% for message in messages %}
+                            <p class="alert text-xl-center text-capitalize bg-info"
+                                style="font-size: green medium; font-style: italic;">
+                                {{ messages }}</p>
+                            {% endfor %}
+                            {%endif%}
+                            {%endwith %}
+                        </div>
+                <div class="form-group">
+                    <label for="name">Product_name</label>
+                    <input type="text" class="form-control" placeholder="Enter name" id="name" name="name"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="email">Price</label>
+                    <input type="number" class="form-control" placeholder="Enter Price" id="Price" name="Price">
+                </div>
+                <div class="form-group">
+                    <label for="text">Image</label>
+                    <input type="text" class="form-control" placeholder="Enter image path" id="Image" name="Image">
+                </div>
+                <div class="form-group">
+                    <label for="text">Discription</label>
+                    <input type="text" class="form-control" placeholder="Enter Discription" id="Discription"
+                        name="Discription" onsubmit="">
+                </div>
+                <button type="submit" class="btn btn-primary mt-2" value="Submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{%endblock%}

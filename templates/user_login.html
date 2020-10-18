@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}{% block body %}
+
+
+<section>
+    <div class="container mb-lg-3" style="margin-top: 4rem;">
+        <h2 class="text-center "><a href="" name="contact"></a>login</h2>
+        <hr class="w-25 mx-auto bg-dark">
+
+        <div class="w-50 mx-auto font-weight-bold  ">
+            <form action="/login" method="POST">
+                <!-- flash message  -->
+                <div>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong class="text-dark text-capitalize">{{messages}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    {%endif%}
+                    {%endwith %}
+                </div>
+                <!-- flash message end -->
+                <div class="form-group">
+                    <label for="name">Email:</label>
+                    <input type="email" class="form-control" placeholder="Enter name" id="name" name="Email"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="name">password:</label>
+                    <input class="form-control" placeholder="Enter password" id="password" name="password"
+                        autocomplete="off" type="password">
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-success mt-2 ">login</button>
+            </form>
+            <a href="/createuser"><button type="submit" class="btn btn-primary mt-2 ">Create Account</button></a>
+        </div>
+</section>
+
+
+
+{% endblock body %}

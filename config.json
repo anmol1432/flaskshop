@@ -1,0 +1,11 @@
+{
+    "params": {
+        "local_uri": "mysql+pymysql://root:@localhost/flaskshop",
+        "gmail_user": "anmolbuttar143205@gmail.com",
+        "gmail_password": "anmol@143",
+        "admin_user": "pythoner121",
+        "admin_password": "123",
+        "secret_key_for_session": "123anmol",
+        "upload_location": "C:\\py_projects\\project_flask1\\flask_eshop_b5\\static\\UPLOAD_FOLDER\\"
+    }
+}

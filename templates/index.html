@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+
+
+{% block body %}
+
+<div class="container text-center" id="cardoo">
+        <h1 class="navbar-brand display-4 " id="shop">My Punjab</h1>
+        <hr class=" display-4 mb-lg-5" style="background-color: black;" />
+        <div class="row align-content-center" id="flex-container">
+
+                <div class="card align-content-center" style="width: 18rem;" id="cardss">
+                        <img src="/static/img/men.jpg" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                                <h5 class="card-title ">Mens product</h5>
+                                <a href="/menproduct"> <button
+                                                class="btn bg-primary text-capitalize text-light data-toggle=" tooltip"
+                                                data-placement="right" title="Shop Now"">Shop Now</button> </a>
+                        </div>
+                        </div>
+                      
+                        <div class=" card" style="width: 18rem;" id="cardss">
+                                                <img src="/static/img/istock.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body text-center">
+                                                        <h5 class="card-title ">lady product</h5>
+                                                        <a href="/womenproduct"> <button
+                                                                        class="btn bg-primary text-capitalize text-light data-toggle="
+                                                                        tooltip" data-placement="right" title="Shop Now" ">Shop Now</button> </a>
+                        </div>
+                        </div> 
+
+                        <div class=" card" style="width: 18rem;" id="cardss">
+                                                                        <img src="/static/img/kid.jpg"
+                                                                                class="card-img-top" alt="...">
+                                                                        <div class="card-body">
+                                                                                <h5 class="card-title text-center">kids
+                                                                                        product</h5>
+                                                                                <a href="/kidproduct"> <button
+                                                                                                class="btn bg-primary text-capitalize text-light data-toggle="
+                                                                                                tooltip"
+                                                                                                data-placement="right"
+                                                                                                title="Shop Now" ">Shop Now</button> </a>
+                        </div>
+                        </div> 
+              </div>
+        </div>
+        <!-- cards end -->
+
+
+{% endblock body %}

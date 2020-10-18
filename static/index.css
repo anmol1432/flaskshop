@@ -1,0 +1,36 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+#brand {
+  font-size: 2rem;
+}
+
+#nvbr {
+  opacity: 0.8 !important;
+}
+
+#shop {
+  margin-top: 4rem;
+  font-size: 3rem;
+  text-align: center !important;
+}
+
+#flex-container {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#flex-container > #cardss {
+  border: 1px solid rgb(32, 27, 27);
+  margin-bottom: 2rem;
+}
+
+#flex-container > img {
+  height: 190px !important;
+}

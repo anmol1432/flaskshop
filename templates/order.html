@@ -1,0 +1,48 @@
+{% extends 'layout.html' %} {% block body %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-primary text-center alert-dismissible fade show" role="alert">
+    <strong class="text-dark text-capitalize">{{messages}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+{%endif%}
+{%endwith %}
+
+<div class="d-flex justify-content-start">
+    <div class="container mt-2 mb-5">
+        <h2 class="m-3">Product List You Buy!</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product_name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Date of order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- render all selected product from database -->
+                {% for order in orders%}
+                <tr>
+                    <!-- delete the product from database if click cancel we send that
+                     data to server and sever will recognize which item to delete -->
+                    <td>{{order.p_name}}</td>
+                    <td>{{order.p_price}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>{{order.date}}</td>
+                    <td><a
+                            href="/cancelorder/{{current_user.user_id}}/{{order.p_name}}/{{order.p_price}}/{{order.quantity}}"><button
+                                class=" btn btn-danger text-capitalize rounded text-light">Cancel</button></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{%endblock body%}

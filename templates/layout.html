@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>flask_(e)</title>
+    <!-- my css -->
+    <link rel="stylesheet" type="text/css" href="/static/index.css" />
+    <!-- botstarp -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light " id="nvbr"
+      style="background-image: repeating-linear-gradient(#a8e7fa, #fcc8c8); border-bottom: none;">
+      <span class="navbar-brand text-dark" id="brand">My Punjab</span>
+      <button class="navbar-toggler bg-light border-dark" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon btn-outline navbar-light "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto pr-3">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-dark" href="/contact" tabindex="-1" aria-disabled="true">Contact</a>
+          </li>
+
+          {% if current_user.is_authenticated %}
+          <li class="nav-item active"></li>
+          <a class="nav-link text-dark" href="/logout">Logout<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-dark" href="/index">
+              Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <div class="">
+              <a href="{{ url_for('order') }}"><button class=" btn btn-primary text-capitalize rounded text-light px-3">
+                  Bag
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-fill" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
+                  </svg>
+                  <!---- no of product -- -->
+                </button></a>
+            </div>
+          </li>
+          {% else %}
+
+          <li class="nav-item active">
+            <a class="nav-link text-dark" href="/login">Login<span class="sr-only">(current)</span></a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock body %}
+
+
+
+    <!-- about us -->
+    <section style="margin-bottom: 0%;">
+      <div class="container text-center">
+        <h2 class="text-center " style="font-size: 2rem;"><a a href="" name="about" class="text-dark"
+            id="shop"></a>About Messo</h2>
+        <hr class="w-25 mx-auto bg-dark">
+        <p class="font-weight-normal mt-4" style="font-size: 1.4rem;">
+          This is best website in world you will definately get a good job
+          dont be deprssed keep going. Voluptatem porro architecto alias. Volup
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Voluptatem porro architecto alias. Volup
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Voluptatem porro architecto alias. Volup
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Voluptatem porro architecto alias. Volup
+        </p>
+      </div>
+    </section>
+    <!-- aboutend -->
+
+    <!-- footer -->
+    <section>
+      <!-- Footer -->
+      <!-- Copyright -->
+      <div class="text-center page-footer font-small special-color-dark pt-4 text-light pb-4 mt-5"
+        style="font-size: 1.5rem; background-color:#151d2d; ">© 2020 Copyright: anmolbuttar143205@gmail.com
+      </div>
+      <!-- Copyright -->
+      <!-- Footer -->
+    </section>
+    <!-- footr end -->
+    <!-- javascript -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+
+</html>

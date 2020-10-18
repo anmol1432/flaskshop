@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block body %}
+<section>
+    <div class="container mb-lg-3" style="margin-top: 4rem;">
+        <h2 class="text-center "><a href="" name="contact"></a>Create Id</h2>
+        <hr class="w-25 mx-auto bg-dark">
+        <div class="w-50 mx-auto font-weight-bold  ">
+            <form action="/createuser" method="POST">
+                <div class="form-group">
+                    <label for="name">User Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter name" id="name" name="username"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="name">Email:</label>
+                    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="name">Mobile_no:</label>
+                    <input type="number" class="form-control" placeholder="Enter name" id="phone" name="phone"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="name">Password:</label>
+                    <input class="form-control" placeholder="Enter password" id="password" name="password"
+                        autocomplete="off" type="password">
+                </div>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <strong class="text-dark text-capitalize">{{messages}}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                {%endif%}
+                {%endwith %}
+
+                <button type="submit" class="btn btn-success mt-2 ">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock body %}

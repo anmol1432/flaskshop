@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<!-- conatct us -->
+<section>
+  <div class="container mb-lg-3" style="margin-top: 4rem;">
+    <h2 class="text-center "><a href="" name="contact"></a>Contact Us </h2>
+    <hr class="w-25 mx-auto bg-dark">
+    <div>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="alert alert-primary text-center alert-dismissible fade show" role="alert">
+        <strong class="text-dark text-capitalize">{{messages}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      {%endif%}
+      {%endwith %}
+    </div>
+    <div class="w-50 mx-auto font-weight-bold  ">
+      <form action="/contact" method="POST">
+        <div class="form-group">
+          <label for="name">your name:</label>
+          <input type="text" class="form-control" placeholder="Enter name" id="name" name="name" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="text">Text area:</label>
+          <textarea class="form-control" id="text" name="textmsg"></textarea>
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox"> Remember me
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Send</button>
+      </form>
+    </div>
+</section>
+
+{% endblock body %}
+<!-- contactend -->
